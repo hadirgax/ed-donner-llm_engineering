@@ -1,0 +1,12 @@
+services:
+  devcon:
+    user: devcon
+    image: hadirgax/devcontainer-miniconda:latest
+    platform: linux/amd64
+    volumes:
+      - ..:/workspace:cached
+      - conda-pkgs-cache:/home/devcon/.conda/pkgs
+    command: /bin/bash -c "while sleep 1000; do :; done"
+
+volumes:
+  conda-pkgs-cache:
