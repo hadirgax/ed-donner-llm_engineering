@@ -7,7 +7,6 @@ langchain
 langchain-openai
 langchain_experimental
 langchain_chroma
-langchain[docarray]
 numpy
 matplotlib
 ollama

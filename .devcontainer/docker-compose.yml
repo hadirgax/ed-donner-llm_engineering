@@ -7,6 +7,17 @@ services:
       - ..:/workspace:cached
       - conda-pkgs-cache:/home/devcon/.conda/pkgs
     command: /bin/bash -c "while sleep 1000; do :; done"
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 16G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
 
 volumes:
   conda-pkgs-cache:
